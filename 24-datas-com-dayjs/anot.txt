@@ -1,0 +1,7 @@
+primeiro começamos criando uma variável com o require para o dayjs
+
+após isso, criar uma função para o aniversario com date como parâmetro, dentro dessa função, criar uma variável também com o mesmo nome da função, passando também o date como parâmetro
+
+para capturar a data atual, criar uma variável que recebera dayjs sem nenhum parâmetro
+
+para calcular a diferença entre duas datas, usar o metodo diff, no caso para calcular a idade, precisamos criar uma variável para a idade em anos, essa variável recebera a variavel de hoje recebendo o metodo diff com a variavel de aniversario como parâmetro seguido da unidade que a gente quer a diferença (em anos, meses ou dias)

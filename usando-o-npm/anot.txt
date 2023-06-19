@@ -1,0 +1,53 @@
+npm é o gerenciador de pacotes do node.js
+
+as maiores vantagens dos módulos em js é a possibilidade de reaproveitar os módulos e também aproveitar módulos de outros programadores
+
+o npm existe para facilitar o gerenciamento de módulos no js, já que na maioria das aplicações podem existir centenas de módulos, logo, se reaproveitarmos os módulos que já escrevemos, conseguimos economizar tempo fazendo coisas novas
+
+os módulos servem para organizar as nossas aplicações, e o npm permite que possamos compartilhar nossos códigos na internet, baixar módulos para o nosso projeto e também gerenciar os módulos instalados no nosso projeto
+
+o npm também pode ser visto como 3 recursos que trabalham juntos: 
+1 - uma ferramenta de linha de comando para executar o npm (usar o terminal) - powershell ou cmd 
+2 - um repositório online de pacotes, onde ficam hospedados os módulos que podemos baixar
+3 - O site http://npmjs.com onde podemos navegar pelos módulos existentes no repositório
+
+no site do npm podemos pesquisar os pacotes que voce precisa, nas páginas das bibliotecas temos as informações legais sobre o projeto na parte readme, lá também encontramos o comando para instalação direto pelo terminal, conseguimos ver as dependências da biblioteca (muitas bibliotecas possuem outros códigos de qual dependem) e quando instalamos a  biblioteca escolhida, essas dependências são baixadas juntamente
+
+USANDO O NPM NA PRÁTICA
+para abrir uma pasta específica dentro de outra pasta, usamos o comando cd seguido do nome da pasta escolhida 
+
+para inicializar um projeto, usamos o comando npm init, apertar enter e em seguida o terminal vai fazer algumas perguntas, você tem a opção de responder as perguntas ou apenas deixá-las vazias, na parte do autor podemos colocar o nosso nome, para confirmar tudo basta digitar 'yes' quando o comando pedir, então o js vai criar um arquivo chamado package.json e dentro desse arquivo vai conter exatamente as informações que o terminal perguntou e esse arquivo é o principal do npm e ele vai ser usado para gerenciar o projeto
+
+para instalar no terminal qualquer comando do npm, basta usar o 
+npm install --save nomeDaBiblioteca
+
+após isso, ele vai criar um arquivo chamado package-lock-json e esse arquivo serve para fazer uma trava nas versoes que utilizamos, e então no arquivo package.json será adicionada mais uma chave contendo as dependencias da biblioteca, e também sera criada uma pasta com o nome de node_modules, com outra pasta com o nome da biblioteca e com os módulos dentro dela 
+
+para utilizar o pacote que você baixou, é necessário criar um arquivo index.js (importante que esteja dentro da pasta certa senão nada funciona)
+
+dentro do arquivo, criar uma variável com o atributo require('') e dentro dos parênteses o vscode já vai reconhecer o nome da biblioteca que sera usada no contexto do commom.js 
+
+então, com a variável criada, conseguimos usar os métodos da biblioteca, por exemplo: 
+
+lodash.filter
+
+também podemos usar métodos como:
+
+console.log(lodash.isArray([]))
+
+ou também:
+console.log(lodash.kebabCase('Lucca Lopes')) e dar um comando no terminal assim:
+
+node index.js
+
+e então o terminal devolverá o conteúdo dentro do log como kebabCase
+
+o npm também instala dependencias de desenvolvimento, que são coisas que precisamos enquanto estamos desenvolvendo alguma coisa, mas quando publicarmos o site, não precisamos delas para não ficar pesando a toa no site
+
+para usá-la, basta usar o comando :
+npm install --save-dev style loader
+
+a biblioteca eslint serve para formatar o nosso código, caso contenha erros, indentação errada, esse pacote ajuda a corrigir esses erros, detectando mais facil 
+
+o comando será:
+npm install --save-dev eslint

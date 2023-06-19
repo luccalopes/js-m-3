@@ -1,0 +1,5 @@
+o operador de coalescencia nula é um operador que retorna o seu operando do lado direito, caso o operador do lado direito for falso/nulo/undefined, caso o operador esquerdo for verdadeiro, ele retorna o valor esquerdo e podemos adicionar mais de dois parametros
+
+este operador é representado pelos sinais de "??" podendo ser aplicado em um console.log por exemplo
+
+vale destacar que ele é diferente do operador lógico "||" pois este operador reconhece o número 0 como null também, já o operador "??" não entende o 0 como um valor indefinido

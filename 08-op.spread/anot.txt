@@ -1,0 +1,6 @@
+o operador spread serve para espalhar os elementos de um objeto iteravel, como um array, um objeto ou uma string, ele é representado por três pontos e ele separa tudo que estiver dentro de um elemento
+
+=> let str = 'Hello World'
+console.log(...str) // devolve H e l l o , W o r l de
+
+o spread também serve para clonar objetos iteráveis, possibilitando manipular o código sem afetá-lo, e também pode ser usado para transformar strings em array

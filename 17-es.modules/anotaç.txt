@@ -1,0 +1,16 @@
+para começar a exportar os modulos em js, primeiro precisamos colocar o type="module" na tag do script no HTML
+
+logo depois, no arquivo que a função foi criada, iremos colocar 'export' antes da função
+
+e então, quando criarmos funções em arquivos separados do tipo JS, após ter as funções criadas, se usa o elemento 'Object.assing()' e dentro dos parênteses podemos passar os parâmetros, e então colocamos os atributos neles e depois passamos um return
+
+e então, para importarmos para o arquivo principal do JS, no começo do código já colocamos um import{} e dentro das chaves nós chamamos a função criada em outro arquivo, após as chaves, basta colocar um from "./arquivo.js" e é necessário colocar o .js para a maquina entender de onde esta vindo a função, e o nome importado precisa ser identico ao original.
+
+se for o caso de precisar trocar o nome no arquivo index, podemos, dentro das chaves, passar um 'as' + nome escolhido para o JS entender 
+
+já para fazer um export padrão (default) apenas precisamos colocar um 'default' depois do 'export' da função criada, então no arquivo js, inserir o 'import' sem passar as chaves, e então inserir o nome da função onde seriam as chaves, depois  o from "./arquivo.js" - dessa forma, podemos colocar o nome que quisermos no index, PORÉM, o export default só pode ter um por arquivo e a explicação para isso é simples, o nome default já é um padrão e não temos como ter dois padrões no mesmo arquivo, já o nomeável você consegue exportar quantos você quiser 
+
+o export default pode funcionar como uma função anonima pois o nome é irrelevante
+
+
+também temos mais uma alternativa que é o export non-inline
