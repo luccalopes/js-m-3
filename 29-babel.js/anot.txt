@@ -1,0 +1,31 @@
+para utilizar o babel, começar com um npm init -y
+
+passar a flag --save-dev para indicar apenas a dependencia de desenvolvimento e não para produção
+a flag --save-dev pode ser abreviada para uma flag encurtada como -D então o node irá entender que é uma dependência de desenvolvimento 
+
+para instalar no terminal, seguir com a flag npm install -D @babel/core @babel/cli @babel/preset-env
+
+a ferramenta @babel/core é o núcleo do babel, que faz o procedimento de compilar o código
+
+o @babel/cli é a ferramenta de comando do babel, que vai permitir interagir com o core
+
+o @babel/preset-env vai configurar o babel automaticamente, é um preset (confguração pré definida)
+
+para especificar um arquivo de saída, usar o comando
+npx babel index.js --out-file dist.js --presets=@babel/preset-env
+
+também podemos compilar diversos documentos js de uma vez, basta que eles estejam todos dentro de uma única pasta, então iremos executar o exemplo do seguinte comando:
+    npx babel src --out-dir dist --presets=@babel/preset-env
+este comando irá criar uma outra pasta já com os arquivos compilados para um js mais antigo
+
+dentro dos scrips do arquivo package-json, podemos criar uma chave com o script com o nome do pacote babel, e dentro da string podemos criar o comando "universal" para o desenvolvimento do projeto
+
+podemos também criar um arquivo de configuração padrão para o babel, ele deve ser reconhecido por padrão com o nome de babel.config.js e dentro dele podemos inserir os presets da seguinte forma:
+
+module.exports = {
+    presets: [
+        ["@babel/preset-env"]
+    ]
+}
+
+o module exports serve para exportar este preset para o arquivo json, então quando formos compilar os arquivos de dentro de uma pasta, quando executarmos o script com o nome do pacote (no caso o babel) o comando ficará mais curto e fácil de entender. o script ficará assim: "babel": "babel src --out-dir dist"

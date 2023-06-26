@@ -1,0 +1,9 @@
+dentro do package.json podemos alterar o "test" para um nome de um comando, e dentro da string, criar o comando
+
+para executar, basta utilizar um npm run nomedocomando
+
+podemos criar um comando padrão para inicializar um executavel
+
+criar um "start" abaixo do "test" com uma string "node index.js" (exemplo) 
+
+para executar basta utilizar o npm start
