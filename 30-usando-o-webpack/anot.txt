@@ -1,0 +1,31 @@
+para usar o webpack pelo navegador na prática, podemos começar criando uma pasta contendo um arquivo html. (podemos chamar essa pasta de dist) e, depois, uma pasta que pode ser nomeada com src contendo um arquivo js.
+
+abrir a pasta que contém as outras duas pastas com o terminal, e então, instalar o webpack como uma dependência de desenvolvimento. usar o comando npm i -D webpack webpack-cli
+
+o primeiro pacote webpack é o "core", o núcleo principal do webpack (tudo que é responsável para as funcionalidades) e o webpack-cli é a interface de linha de comando do webpack, que é responsável para podermos executar ele no terminal
+
+agora podemos fazer uma demonstração básica do webpack com uso no navegador
+
+após isso, instalar uma dependência qualquer no projeto, no caso dessa aula é o dayjs
+
+no arquivo index.js, importar o dayjs e inserir um alert(`Hoje é ${dayjs().format('DD/MM/YYYY)}`)
+
+após isso, apenas executar o webpack com um comando npx e então um arquivo js comprimido sera criado na pasta dist, contendo tudo que a aplicação vai precisar para rodar no navegador, portando a pasta node_modules pode ser excluída sem que interfira em nada 
+
+para configurar o webpack, podemos começar alterando o tipo de import no index.js, trocando o require pelo import from mesmo, e uma vez que a pasta node_modules foi exluida, podemos reinstalar apenas usando um npm install básico no mesmo terminal, sem mais nada, então ele irá baixar tudo de novo, inclusive, quando tivermos bugs na aplicação, podemos sempre apagar a pasta node_modules e reinstalar, garantindo que ela estará limpa e poder reinstalar também os outros pacotes, olhando todas as dependências no package.json e vendo o que falta, reintalando tudo que precisa 
+
+o webpack identifica o ponto de entrada pelo index.js da pasta src e também irá criar o arquivo main.js dentro da pasta dist por padrão, mas podemos criar um arquvo de configuração para o webpack, com o nome padrão de webpack.config.js e mudar essas coisas
+
+este arquivo precisa que exporte um objeto em js com as configurações, então podemos fazer o seguinte como exemplo;
+
+module.exports = {
+    entry: {
+        index: './src/index.js'
+    }
+}
+
+no objeto acima, exportamos as configurações para um arquivo js que temos como alvo. podemos por exemplo, especificar os arquivos de entrada para o webpack, então quando executar o comando npx webpack, e então ele criará um arquivo index.js e não mais um main, pois por padrão ele utilizará o nome de entrada na saída também
+
+podemos setar o mode para 'development' e será removido do terminal o aviso do modo padrão que não foi configurado
+
+também podemos configurar a saída dos arquivos que serão criados, definindo o output: {path: path.resolve(__dirname, 'public)} este comando irá dar o caminho absoluto de um módulo que será exportado do node. para importar no arquivo de configuração, basta utilizar uma const com o require para o path, e a string 'public' no final servirá para o nome da criação da pasta de saída
