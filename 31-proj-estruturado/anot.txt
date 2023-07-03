@@ -1,0 +1,47 @@
+projeto estruturado
+
+1 criar a pasta webpack-project
+dentro da pasta, inicializar o projeto com npm init -y
+
+abrir o vscode com o terminal
+
+criar a pasta src com outra pasta chamada styles e criar o index.css
+
+dentro da pasta src novamente criar o index.js e importar o estilo que está em index.css
+no index.js criar uma sintaxe mais moderna para ver o babel compilando, pode ser uma variável com um console.log(`It works ${1 +1}`) e então chamar a função criada dentro dessa const
+
+fazer o comando npm i -D webpack webpack-cli @babel/core @babel/preset-env babel-loader style-loader css-loader
+
+as dependencias irão aparecer no package-json
+
+para configurar o babel, criar o babel.config.js
+
+module.exports = {
+    presets: [
+        ['@babel/preset-env']
+    ]
+}
+
+configurar o webpack agora no arquivo webpack.config.js
+module.exports = {
+    entry; {
+        index: './src/index.js'
+    },
+    mode: 'development',
+    module: {
+        rules: [{
+            test: /\.css$/,
+            use: ['style-loader', 'css-loader']
+        }, {
+            test; /\.js$/,
+            use: ['babel-loader']
+        }]
+    },
+    output: {
+        filename: '[name].min.js'
+    }
+}
+
+agora dentro do package.json, criar um script do npm chamado build para inicializar o projeto, contendo uma string 'webpack'
+
+no terminal, npm run build para rodar o script, então uma pasta 'dist' deve ser criada automaticamente contendo o index.min.js 
